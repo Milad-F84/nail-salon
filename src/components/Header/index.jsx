@@ -15,7 +15,7 @@ export default function Header() {
 
   return (
     <>
-      <div className="bg-[#d5ada1]">
+      <div className="bg-[#bf998e]">
         <div className="flex justify-between items-center container-primary p-3">
           <div className="md:hidden block">
             <button
@@ -108,7 +108,7 @@ export default function Header() {
             </p>
           </div>
           <div>
-            <img className="w-22" src="\images\logo-no-bg.png" alt="" />
+            <img className="w-24" src="\images\logo-no-bg.png" alt="" />
           </div>
         </div>
       </div>
