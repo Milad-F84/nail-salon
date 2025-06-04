@@ -19,10 +19,13 @@ export default function Footer() {
               <a href="https://www.instagram.com/ghazaleh.farajollahi/">
                 <InstagramIcon />
               </a>
-              <a href="#">
+              <a href="https://wa.me/989335407792" target="_blank">
                 <WhatsAppIcon />
               </a>
-              <a href="#">
+              <a className="block md:hidden" href="sms:09335407792">
+                <EmailIcon />
+              </a>
+              <a className="hidden md:block" href="mailto:miladfarajollahi84@gmail.com">
                 <EmailIcon />
               </a>
             </div>
@@ -33,7 +36,9 @@ export default function Footer() {
             <p>جمعه : 11 صبح لغایت 18 عصر</p>
           </div>
           <div className="flex flex-col justify-center gap-2">
-            <h2 className="md:-translate-y-6 font-bold text-[#625e5b] text-lg">تماس با ما</h2>
+            <h2 className="md:-translate-y-6 font-bold text-[#625e5b] text-lg">
+              تماس با ما
+            </h2>
             <div className="flex items-center gap-2">
               <PhoneIcon />
               <p>09012345567</p>
