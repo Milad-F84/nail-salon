@@ -25,7 +25,10 @@ export default function Footer() {
               <a className="block md:hidden" href="sms:09335407792">
                 <EmailIcon />
               </a>
-              <a className="hidden md:block" href="mailto:miladfarajollahi84@gmail.com">
+              <a
+                className="hidden md:block"
+                href="mailto:miladfarajollahi84@gmail.com"
+              >
                 <EmailIcon />
               </a>
             </div>
@@ -48,6 +51,21 @@ export default function Footer() {
             <img className="md:w-35" src="\images\logo-no-bg.png" alt="" />
           </div>
         </div>
+      </div>
+      <div className="text-center">
+        <p className="text-[#625e5b] text-sm">
+          تمامی حقوق مادی و معنوی این وبسایت متعلق به سالن زیبایی غزاله فرج الهی
+          است .
+        </p>
+        <span>
+          <a
+            href="https://github.com/Milad-F84"
+            className="text-sm text-blue-500"
+          >
+          <span className="text-sm text-blue-500">طراحی و سئو : </span>
+            Milad Farajollahi
+          </a>
+        </span>
       </div>
     </>
   );
