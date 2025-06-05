@@ -1,5 +1,6 @@
 import About from "../components/About";
 import Banner from "../components/Banner";
+import Gallery from "../components/Gallery";
 import Location from "../components/Location";
 
 export default function HomePage(){
@@ -7,6 +8,7 @@ export default function HomePage(){
         <>
         <Banner />
         <About />
+        <Gallery />
         <Location />
         </>
     )
