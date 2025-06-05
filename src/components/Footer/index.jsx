@@ -52,7 +52,7 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <div className="text-center">
+      <div className="text-center p-2">
         <p className="text-[#625e5b] text-sm">
           تمامی حقوق مادی و معنوی این وبسایت متعلق به سالن زیبایی غزاله فرج الهی
           است .
