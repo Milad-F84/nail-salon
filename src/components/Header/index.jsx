@@ -4,6 +4,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import SupportAgentIcon from "@mui/icons-material/SupportAgent";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -12,6 +13,8 @@ export default function Header() {
   const toggleSubmenu = (name) => {
     setOpenSubmenu(openSubmenu === name ? null : name);
   };
+
+  const navigate = useNavigate();
 
   return (
     <>
@@ -97,13 +100,13 @@ export default function Header() {
             <p className="cursor-pointer text-lg hover:text-[#921A40] text-black duration-200">
               صفحه اصلی
             </p>
-            <p className="cursor-pointer text-lg hover:text-[#921A40] text-black duration-200">
+            <p className="cursor-pointer text-lg hover:text-[#921A40] text-black duration-200" onClick={() => navigate("/Booking")}>
               رزرو آنلاین
             </p>
-            <p className="cursor-pointer text-lg hover:text-[#921A40] text-black duration-200">
+            <p className="cursor-pointer text-lg hover:text-[#921A40] text-black duration-200" onClick={() => navigate("/Blog")}>
               وبلاگ
             </p>
-            <p className="cursor-pointer text-lg hover:text-[#921A40] text-black duration-200">
+            <p className="cursor-pointer text-lg hover:text-[#921A40] text-black duration-200" onClick={() => navigate("/Contact")}>
               ارتباط با ما
             </p>
           </div>
