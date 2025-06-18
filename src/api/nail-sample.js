@@ -552,6 +552,10 @@ const sample = [
     popularity: 3.8,
     tags: ["روزمره", "فانتزی"],
   },
+];
+export default sample;
+
+const color = [
   {
     id: 38,
     title: "طرح ناخن مرمری بنفش",
@@ -748,4 +752,3 @@ const sample = [
     tags: ["مینیمال", "روزمره"],
   },
 ];
-export default sample;

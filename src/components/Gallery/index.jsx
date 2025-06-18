@@ -5,6 +5,7 @@ import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
+import { useNavigate } from "react-router-dom";
 
 const settings = {
   dots: false,
@@ -23,6 +24,8 @@ const settings = {
 };
 
 export default function Gallery() {
+    const navigate = useNavigate();
+
   return (
     <>
       <div className="bg-[#f5eae4] mt-10 p-20">
@@ -49,7 +52,7 @@ export default function Gallery() {
               </Slider>
             </div>
             <div className="text-center p-3">
-              <button className="cursor-pointer hover:text-white duration-200 bg-[#bf998e] p-2 rounded-lg font-bold text-center">
+              <button className="cursor-pointer hover:text-white duration-200 bg-[#bf998e] p-2 rounded-lg font-bold text-center" onClick={() => navigate("/Booking")}>
                 رزرو آنلاین
               </button>
             </div>
