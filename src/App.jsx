@@ -1,13 +1,18 @@
 import { useState } from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes, useNavigate } from "react-router-dom";
 import Layout from "./Layout";
 import HomePage from "./Pages/HomePage";
 import BlogPage from "./Pages/BlogPage";
 import BookPage from "./Pages/BookPage";
 import SignInPage from "./Pages/SignInPage";
 import ContactUsPage from "./Pages/ContactUsPage";
+import LogInPage from "./Pages/LogInPage";
+import useAuthStore from "./store/authStore";
+import ProtectedRoutes from "./route/ProtectedRoutes";
 
 function App() {
+  const isLoggedIn = useAuthStore((state) => state.isLoggedIn);
+
   return (
     <>
       <BrowserRouter>
@@ -15,9 +20,19 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/Blog" element={<BlogPage />} />
-            <Route path="/Booking" element={<BookPage />} />
-            <Route path="/Signin" element={<SignInPage />} />
+            <Route
+              path="/Booking"
+              element={
+                <ProtectedRoutes>
+                  <BookPage />
+                </ProtectedRoutes>
+              }
+            />
             <Route path="/Contact" element={<ContactUsPage />} />
+            <Route
+              path="/Login"
+              element={isLoggedIn ? <Navigate to={"/Booking"} /> : <LogInPage />}
+            />
           </Routes>
         </Layout>
       </BrowserRouter>

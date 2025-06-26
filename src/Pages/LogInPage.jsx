@@ -1,1 +1,9 @@
-export default function LogInPage(){}
+import LogIn from "../components/LogIn";
+
+export default function LogInPage() {
+  return (
+    <>
+      <LogIn />
+    </>
+  );
+}
