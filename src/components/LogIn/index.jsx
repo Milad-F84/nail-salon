@@ -1,17 +1,22 @@
-import React from "react";
+import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import * as yup from "yup";
+import useAuthStore from "../../store/authStore";
+import { useNavigate } from "react-router-dom";
 
 const schema = yup.object({
-  userName: yup.string().required("Name is required"),
+  username: yup.string().required("Name is required"),
   password: yup
     .string()
     .required("Password is required")
     .min(8, "Password must be at least 8 characters"),
 });
 
-export default function LogIn() {
+export default function Login() {
+
+  const login = useAuthStore((state) => state.login);
+  const navigate = useNavigate();
+
   const {
     register,
     handleSubmit,
@@ -20,31 +25,24 @@ export default function LogIn() {
     resolver: yupResolver(schema),
   });
 
-  const onSubmit = (data) => {
-    console.log("Form Submitted:", data);
+  const onSubmit = () => {
+    login();
+    navigate("/Booking");
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form onSubmit={handleSubmit(onSubmit)} className="max-w-md mx-auto mt-10">
       <div>
-        <label>Name:</label>
-        <input {...register("")} />
-        <p>{errors.name?.message}</p>
+        <label>Username:</label>
+        <input {...register("username")} className="border w-full p-2 mb-2 rounded"/>
+        <p>{errors.username?.message}</p>
       </div>
-
       <div>
-        <label>Email:</label>
-        <input {...register("email")} />
-        <p>{errors.email?.message}</p>
+        <label>Password:</label>
+        <input type="password" {...register("password")} className="border w-full p-2 mb-4 rounded"/>
+        <p>{errors.password?.message}</p>
       </div>
-
-      <div>
-        <label>Age:</label>
-        <input type="number" {...register("age")} />
-        <p>{errors.age?.message}</p>
-      </div>
-
-      <button type="submit">Register</button>
+      <button type="submit" className="bg-blue-500 text-white py-2 px-4 rounded w-full">Submit</button>
     </form>
   );
 }

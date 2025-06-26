@@ -3,7 +3,9 @@ import LogIn from "../components/LogIn";
 export default function LogInPage() {
   return (
     <>
-      <LogIn />
+      <div className="container-primary">
+        <LogIn />
+      </div>
     </>
   );
 }
