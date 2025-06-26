@@ -4,7 +4,6 @@ import Layout from "./Layout";
 import HomePage from "./Pages/HomePage";
 import BlogPage from "./Pages/BlogPage";
 import BookPage from "./Pages/BookPage";
-import SignInPage from "./Pages/SignInPage";
 import ContactUsPage from "./Pages/ContactUsPage";
 import LogInPage from "./Pages/LogInPage";
 import useAuthStore from "./store/authStore";

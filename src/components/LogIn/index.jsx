@@ -35,14 +35,14 @@ export default function Login() {
       <div>
         <label>Username:</label>
         <input {...register("username")} className="border w-full p-2 mb-2 rounded"/>
-        <p>{errors.username?.message}</p>
+        <p className="text-red-600">{errors.username?.message}</p>
       </div>
       <div>
         <label>Password:</label>
-        <input type="password" {...register("password")} className="border w-full p-2 mb-4 rounded"/>
-        <p>{errors.password?.message}</p>
+        <input type="password" {...register("password")} className="border w-full p-2 mb-2 rounded"/>
+        <p className="text-red-600">{errors.password?.message}</p>
       </div>
-      <button type="submit" className="bg-blue-500 text-white py-2 px-4 rounded w-full">Submit</button>
+      <button type="submit" className="bg-blue-500 text-white py-2 px-4 rounded w-full cursor-pointer">Submit</button>
     </form>
   );
 }

@@ -100,7 +100,7 @@ export default function Header() {
             <p className="cursor-pointer text-lg hover:text-[#921A40] text-black duration-200">
               صفحه اصلی
             </p>
-            <p className="cursor-pointer text-lg hover:text-[#921A40] text-black duration-200" onClick={() => navigate("/Booking")}>
+            <p className="cursor-pointer text-lg hover:text-[#921A40] text-black duration-200" onClick={() => navigate("/Login")}>
               رزرو آنلاین
             </p>
             <p className="cursor-pointer text-lg hover:text-[#921A40] text-black duration-200" onClick={() => navigate("/Blog")}>
