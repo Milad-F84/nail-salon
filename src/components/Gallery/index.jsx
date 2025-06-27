@@ -15,44 +15,54 @@ const settings = {
   slidesToScroll: 1,
   responsive: [
     {
-      breakpoint: 768,
-      settings: {
-        slidesToShow: 1,
-      },
+      breakpoint: 1280,
+      settings: { slidesToShow: 3 },
+    },
+    {
+      breakpoint: 1024,
+      settings: { slidesToShow: 2 },
+    },
+    {
+      breakpoint: 640,
+      settings: { slidesToShow: 1 },
     },
   ],
 };
 
 export default function Gallery() {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
   return (
     <>
-      <div className="bg-[#f5eae4] mt-10 p-20">
+      <div className="bg-[#f5eae4] mt-10 p-10 md:p-20">
         <h1 className="text-center font-bold text-xl md:text-3xl text-[#625e5b]">
           نمونه کارها
         </h1>
       </div>
-      <div className="bg-[#f5eae4] mt-10">
-        <div className="container-primary p-9">
-          <div className="">
-            <div className="max-w-6xl mx-auto px-4 mt-10">
-              <Slider {...settings}>
-                {sample.map((product) => (
-                  <div key={product.id} className="p-2 min-w-[250px] max-w-[250px] bg-white rounded-xl shadow-md cursor-pointer hover:scale-105 transition duration-300">
-                    <div className="bg-white shadow rounded-lg p-4 text-center">
-                      <img
-                        src={product.image_url}
-                        alt={product.title}
-                        className=" rounded-xl w-full h-48 object-cover"
-                      />
-                    </div>
+      <div className="bg-[#f5eae4]">
+        <div className="container-primary px-4 py-10">
+          <div className="max-w-6xl mx-auto">
+            <Slider {...settings}>
+              {sample.map((product) => (
+                <div
+                  key={product.id}
+                  className="p-2 bg-white rounded-xl shadow-md cursor-pointer hover:scale-105 transition duration-300"
+                >
+                  <div className="bg-white shadow rounded-lg p-4 text-center">
+                    <img
+                      src={product.image_url}
+                      alt={product.title}
+                      className="rounded-xl w-full h-48 object-cover md:h-56"
+                    />
                   </div>
-                ))}
-              </Slider>
-            </div>
-            <div className="text-center p-3">
-              <button className="cursor-pointer hover:text-white duration-200 bg-[#bf998e] p-2 rounded-lg font-bold text-center" onClick={() => navigate("/Login")}>
+                </div>
+              ))}
+            </Slider>
+            <div className="text-center p-6">
+              <button
+                className="cursor-pointer hover:text-white duration-200 bg-[#bf998e] px-6 py-2 rounded-lg font-bold"
+                onClick={() => navigate("/Login")}
+              >
                 رزرو آنلاین
               </button>
             </div>

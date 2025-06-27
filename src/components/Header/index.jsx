@@ -85,14 +85,6 @@ export default function Header() {
                     ورود به حساب کاربری
                   </li>
                 </ul>
-
-                <div className="border rounded-xl p-2 mt-6 flex items-center justify-between">
-                  <div>
-                    <p className="text-sm text-gray-600">پشتیبانی ۲۴/۷</p>
-                    <p className="font-bold">+۹۴۰ ۱۲۳ ۴۵۶۷ ۸۹۴</p>
-                  </div>
-                  <SupportAgentIcon />
-                </div>
               </div>
             )}
           </div>

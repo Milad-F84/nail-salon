@@ -10,12 +10,10 @@ export default function Book() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const message = `سلام من ${name} هستم. میخواهم برای ${service} در تاریخ ${date} یک وقت بگیرم .💅`;
-    const phone = "989335407792";
-    const whatsappUrl = `https://wa.me/${phone}?text=${encodeURIComponent(
-      message
-    )}`;
-    window.open(whatsappUrl, "_blank");
+    const message = `سلام من ${name} هستم و می‌خواهم برای ${service} در تاریخ ${date} وقت بگیرم`;
+    const phone = "989126969549";
+    const url = `https://api.whatsapp.com/send?phone=${phone}&text=${encodeURIComponent(message)}`;
+    window.open(url, "_blank");
   };
 
   return (
