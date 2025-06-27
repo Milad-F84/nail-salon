@@ -52,7 +52,7 @@ export default function Gallery() {
               </Slider>
             </div>
             <div className="text-center p-3">
-              <button className="cursor-pointer hover:text-white duration-200 bg-[#bf998e] p-2 rounded-lg font-bold text-center" onClick={() => navigate("/Booking")}>
+              <button className="cursor-pointer hover:text-white duration-200 bg-[#bf998e] p-2 rounded-lg font-bold text-center" onClick={() => navigate("/Login")}>
                 رزرو آنلاین
               </button>
             </div>

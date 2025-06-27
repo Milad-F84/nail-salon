@@ -1,4 +1,7 @@
 import { useState } from "react";
+import { Breadcrumbs, Link, Typography } from "@mui/material";
+import HomeIcon from "@mui/icons-material/Home";
+import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 
 export default function Book() {
   const [name, setName] = useState("");
@@ -17,6 +20,37 @@ export default function Book() {
 
   return (
     <>
+      <div className="max-w-4xl mx-auto py-8 px-4">
+        <div className="mb-6">
+          <Breadcrumbs
+            separator={<NavigateNextIcon fontSize="small" />}
+            aria-label="breadcrumb"
+            sx={{
+              "& .MuiBreadcrumbs-li": {
+                display: "flex",
+                alignItems: "center",
+                fontSize: "1rem",
+              },
+            }}
+          >
+            <Link
+              underline="hover"
+              color="inherit"
+              href="/"
+              sx={{ display: "flex", alignItems: "center", gap: 0.5 }}
+            >
+              <HomeIcon sx={{ fontSize: 20 }} />
+              خانه
+            </Link>
+            <Typography
+              color="primary"
+              sx={{ display: "flex", alignItems: "center", fontWeight: 500 }}
+            >
+              رزرو وقت
+            </Typography>
+          </Breadcrumbs>
+        </div>
+      </div>
       <form
         onSubmit={handleSubmit}
         className="max-w-md mx-auto mt-10 p-4 bg-white rounded-xl shadow-md space-y-4"
