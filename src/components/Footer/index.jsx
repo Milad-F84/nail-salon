@@ -48,7 +48,7 @@ export default function Footer() {
             </div>
           </div>
           <div>
-            <img className="md:w-35" src="\images\logo-no-bg.png" alt="" />
+            <img className="md:w-35" src="\images\logo-gold-nobg.png" alt="" />
           </div>
         </div>
       </div>

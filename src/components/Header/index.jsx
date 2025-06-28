@@ -103,7 +103,7 @@ export default function Header() {
             </p>
           </div>
           <div>
-            <img className="w-24" src="\images\logo-no-bg.png" alt="" />
+            <img className="w-28" src="\images\logo-gold-nobg.png" alt="" />
           </div>
         </div>
       </div>

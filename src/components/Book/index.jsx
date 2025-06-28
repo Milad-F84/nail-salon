@@ -2,23 +2,31 @@ import { useState } from "react";
 import { Breadcrumbs, Link, Typography } from "@mui/material";
 import HomeIcon from "@mui/icons-material/Home";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
+import DatePicker from "react-multi-date-picker";
+import persian from "react-date-object/calendars/persian";
+import persian_fa from "react-date-object/locales/persian_fa";
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import { useNavigate } from "react-router-dom";
 
 export default function Book() {
+  const navigate = useNavigate();
   const [name, setName] = useState("");
   const [date, setDate] = useState("");
   const [service, setService] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const message = `سلام من ${name} هستم و می‌خواهم برای ${service} در تاریخ ${date} وقت بگیرم`;
+    const message = `سلام من ${name} هستم و می‌خواهم برای ${service} در تاریخ ${date} وقت بگیرم.💅`;
     const phone = "989126969549";
-    const url = `https://api.whatsapp.com/send?phone=${phone}&text=${encodeURIComponent(message)}`;
+    const url = `https://api.whatsapp.com/send?phone=${phone}&text=${encodeURIComponent(
+      message
+    )}`;
     window.open(url, "_blank");
   };
 
   return (
     <>
-      <div className="max-w-4xl mx-auto py-8 px-4">
+      <div className="max-w-4xl mx-auto py-8 px-4 flex justify-between items-center">
         <div className="mb-6">
           <Breadcrumbs
             separator={<NavigateNextIcon fontSize="small" />}
@@ -48,6 +56,10 @@ export default function Book() {
             </Typography>
           </Breadcrumbs>
         </div>
+        <div className="flex items-center gap-1 cursor-pointer" onClick={() => navigate("/")}>
+          <a className="text-sm underline">بازگشت</a>
+          <ArrowBackIcon fontSize="small"/>
+        </div>
       </div>
       <form
         onSubmit={handleSubmit}
@@ -65,7 +77,7 @@ export default function Book() {
         <select
           value={service}
           onChange={(item) => setService(item.target.value)}
-          className="w-full border p-2 rounded"
+          className="w-full border p-2 rounded cursor-pointer"
           required
         >
           <option value="انتخاب خدمت">انتخاب خدمت</option>
@@ -74,18 +86,19 @@ export default function Book() {
           <option value="ژلیش">ژلیش</option>
         </select>
 
-        <input
-          type="date"
-          placeholder="تاریخ"
+        <DatePicker
           value={date}
-          onChange={(item) => setDate(item.target.value)}
-          className="w-full border p-2 rounded"
-          required
+          onChange={setDate}
+          calendar={persian}
+          locale={persian_fa}
+          calendarPosition="bottom-right"
+          inputClass="w-full border p-2 rounded cursor-pointer"
+          placeholder="تاریخ را انتخاب کنید"
         />
 
         <button
           type="submit"
-          className="w-full bg-green-500 text-white py-2 rounded-lg hover:bg-green-600 transition"
+          className="w-full bg-green-500 text-white py-2 rounded-lg hover:bg-green-600 transition cursor-pointer"
         >
           ارسال از طریق واتساپ
         </button>
