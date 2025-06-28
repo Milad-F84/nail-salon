@@ -69,7 +69,7 @@ export default function ContactUs() {
             </p>
           </div>
           <div className="flex flex-col gap-2 justify-center">
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 mb-4">
               <PersonIcon />
               <p>شبکه های اجتماعی</p>
             </div>
@@ -133,7 +133,7 @@ export default function ContactUs() {
             <div className="flex flex-col gap-2 justify-center">
               <label>پیام:</label>
               <input
-              onChange={(item) => setMessage(item.target.value)}
+                onChange={(item) => setMessage(item.target.value)}
                 {...register("message")}
                 className="border w-full p-2 mb-2 rounded"
               />
@@ -141,7 +141,7 @@ export default function ContactUs() {
             </div>
             <button
               type="submit"
-              className="bg-blue-500 text-white py-2 px-4 rounded w-full cursor-pointer"
+              className="w-full bg-green-500 text-white py-2 rounded-lg hover:bg-green-600 transition cursor-pointer"
             >
               ارسال
             </button>
