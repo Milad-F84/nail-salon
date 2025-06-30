@@ -27,7 +27,7 @@ export default function Book() {
   return (
     <>
       <div className="max-w-4xl mx-auto py-8 px-4 flex justify-between items-center">
-        <div className="mb-6">
+        <div className="">
           <Breadcrumbs
             separator={<NavigateNextIcon fontSize="small" />}
             aria-label="breadcrumb"

@@ -61,44 +61,48 @@ export default function Header() {
                 </div>
 
                 <ul className="text-right space-y-3">
-                  {["خانه", "رزرو آنلاین", "وبلاگ", "ارتباط با ما"].map((item) => (
-                    <li key={item}>
-                      <div
-                        className="flex justify-between items-center cursor-pointer border-b pb-1"
-                        onClick={() => toggleSubmenu(item)}
-                      >
-                        <span>{item}</span>
-                        <KeyboardArrowDownIcon fontSize="small" />
-                      </div>
-                      {openSubmenu === item && (
-                        <ul className="pr-4 text-sm text-gray-600 mt-1 space-y-1">
-                          <li>زیرمنوی ۱</li>
-                          <li>زیرمنوی ۲</li>
-                        </ul>
-                      )}
-                    </li>
-                  ))}
-                  <li
-                    className="cursor-pointer"
-                    onClick={() => navigate("/login")}
-                  >
-                    ورود به حساب کاربری
+                  <li>
+                    <div
+                      className="flex justify-between items-center cursor-pointer border-b pb-1"
+                      onClick={() => navigate("/")}
+                    >
+                      <span>صفحه اصلی</span>
+                    </div>
+                  </li>
+                  <li>
+                    <div
+                      className="flex justify-between items-center cursor-pointer border-b pb-1"
+                      onClick={() => navigate("/Login")}
+                    >
+                      <span>رزرو وقت</span>
+                    </div>
+                  </li>
+                  <li>
+                    <div
+                      className="flex justify-between items-center cursor-pointer border-b pb-1"
+                      onClick={() => navigate("/Contact")}
+                    >
+                      <span>ارتباط با ما</span>
+                    </div>
                   </li>
                 </ul>
               </div>
             )}
           </div>
           <div className="hidden md:flex justify-between items-center gap-8">
-            <p className="cursor-pointer text-lg hover:text-[#921A40] text-black duration-200">
+            <p className="cursor-pointer text-lg hover:text-[#921A40] text-black duration-200" onClick={() => navigate("/")}>
               صفحه اصلی
             </p>
-            <p className="cursor-pointer text-lg hover:text-[#921A40] text-black duration-200" onClick={() => navigate("/Login")}>
+            <p
+              className="cursor-pointer text-lg hover:text-[#921A40] text-black duration-200"
+              onClick={() => navigate("/Login")}
+            >
               رزرو آنلاین
             </p>
-            <p className="cursor-pointer text-lg hover:text-[#921A40] text-black duration-200" onClick={() => navigate("/Blog")}>
-              وبلاگ
-            </p>
-            <p className="cursor-pointer text-lg hover:text-[#921A40] text-black duration-200" onClick={() => navigate("/Contact")}>
+            <p
+              className="cursor-pointer text-lg hover:text-[#921A40] text-black duration-200"
+              onClick={() => navigate("/Contact")}
+            >
               ارتباط با ما
             </p>
           </div>
