@@ -17,7 +17,7 @@ export default function Book() {
   const handleSubmit = (e) => {
     e.preventDefault();
     const message = `سلام من ${name} هستم و می‌خواهم برای ${service} در تاریخ ${date} وقت بگیرم.💅`;
-    const phone = "989126969549";
+    const phone = "989335407792";
     const url = `https://api.whatsapp.com/send?phone=${phone}&text=${encodeURIComponent(
       message
     )}`;
